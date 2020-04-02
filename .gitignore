@@ -1,3 +1,16 @@
+###
+# Files & directories to ignore from git history
+###
+
+ignored/*
+data/raw_ignored/*
+
+
+
+###
+# Typical R software ignore
+###
+
 # History files
 .Rhistory
 .Rapp.history
