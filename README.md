@@ -19,7 +19,7 @@ This survey was created by a Epidemiology professor. We will soon be sharing dat
 
 To take the survey, please:
 
-1. Go to [WeCountCOVID19.com] on a smartphone, tablet, or computer
+1. Go to [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl) on a smartphone, tablet, or computer
 2. Read the brief instructions
 3. Click on _Agree_ to agree to the instructions
 4. Fill out the confidential 5-minute survey
@@ -32,7 +32,7 @@ Here is some sample language you can copy and paste into your email, any messagi
 ---
 Hi friends, in order to “flatten the curve”, we need to know more about what and where COVID-19 symptoms are. Testing is limited, so an online survey has been developed (in Milwaukee!).
 
-The idea is simple:  If you or a loved one are sick, whether or not you have had any test for COVID-19, please use a phone or computer and go to WeCountCOVID19.com and report symptoms confidentially.
+The idea is simple:  If you or a loved one are sick, whether or not you have had any test for COVID-19, please use a phone or computer and go to [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl) and report symptoms confidentially.
 
 Would you help to share by passing this message along to your friends and family members?
 
