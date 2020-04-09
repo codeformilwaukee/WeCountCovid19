@@ -4,7 +4,7 @@
 
 The [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl) is a short, **confidential** survey that is intended for anyone who even thinks they might be ill from the coronavirus. The goal is to identify what and where the COVID19 symptoms are. 
 
-- **If you are sick**, find help, and then please take the 5 minute survey on [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl)
+- **If you are sick**, [seek assistance first](https://www.dhs.wisconsin.gov/covid-19/illness.htm), and then please take the 5 minute survey on [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl)
    - You can take this survey on a computer or a smartphone. 
    - You can also have someone take this survey with you if you need assistance.
    - This is a confidential survey.
