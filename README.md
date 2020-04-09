@@ -1,6 +1,4 @@
 # WeCountCovid19
-A repository for analyzing the WeCountCovid19.com survey
-
 
 ## What is the WeCountCOVID19.com survey?
 
