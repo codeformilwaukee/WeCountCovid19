@@ -1,0 +1,196 @@
+---
+title: "Analysis of fake data"
+author: "Brian Barkley"
+date: "4/2/2020"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, include=FALSE}
+library(tidyverse)
+library(rprojroot)
+library(knitr)
+```
+
+<!-- # Load fake data -->
+
+```{r, include=FALSE}
+wcc_df_raw <- readr::read_csv(
+  rprojroot::find_rstudio_root_file(
+    "data", "raw_ignored", "WCC19_altered.csv"
+  )
+  , col_types = NULL
+  , skip = 0
+)
+
+# wcc_df %>% head()
+```
+
+<!-- ## Cleaning raw data -->
+
+```{r}
+wcc_df <- wcc_df_raw
+colnames(wcc_df) <- wcc_df_raw[1,]
+wcc_df <- wcc_df[-1,]
+```
+
+
+<!-- ### Filter some of the bad rows -->
+
+```{r}
+## filter out the non-agrees
+wcc_df <- wcc_df[wcc_df$`By clicking AGREE, you are stating that you (or a child or someone needing help) are currently sick, 18 years or over, and agreeing to share symptom information.` == "Agree", ]
+```
+
+<!-- ### create easier variables -->
+
+```{r}
+wcc_df$ZIP <- wcc_df$`What is [Field-surveytaker2] ZIP code?`
+wcc_df$gender <- wcc_df$`What is [Field-surveytaker2] gender?`
+wcc_df$days_sick <- wcc_df$`For how many days have [Field-surveytaker] been sick?`
+wcc_df$testing_situation <- wcc_df$`Which best fits [Field-surveytaker2] situation about testing for coronavirus (SARS-CoV-2)?`
+
+
+wcc_df <- wcc_df %>% 
+  mutate(
+    days_sick_interval = case_when(
+      (days_sick %in% c("1 day", "2 days", "3 days", "4 days")) ~ "sick for 1-4 days"
+      ,  (days_sick %in% c("5 days", "6 days", "7 or more days")) ~ "sick for 5+ days"
+      , TRUE ~ NA_character_
+    )
+  )
+```
+
+
+## Initial data views
+
+- This data has `r wcc_df %>% NROW()` rows and `r wcc_df %>% NCOL()` columns. 
+
+```{r}
+# wcc_df %>% head()
+```
+
+
+### Zip codes
+
+This is a subset of the total data; it is very long-tailed.
+
+```{r}
+
+wcc_df %>% 
+  group_by(ZIP) %>% tally() %>% 
+  mutate(number_reporting_illness = ifelse(n > 4, as.character(n),"<= 4")) %>% 
+  # filter(n> 2) %>% 
+  arrange(desc(n)) %>%
+  select(-n) %>%
+  head(8) %>% 
+  knitr::kable()
+```
+
+
+### Gender
+
+```{r}
+wcc_df %>% 
+  group_by(gender) %>% tally() %>% 
+  arrange(desc(n)) %>% knitr::kable()
+```
+
+### Duration of illness
+ 
+Duration of illness at time of survey response. This does not yet adjust for the timestamp on the response. 
+
+```{r}
+wcc_df %>% 
+  group_by(days_sick) %>% tally() %>% 
+  mutate(number_respondents = ifelse(n > 4, as.character(n),"<= 4")) %>% 
+  arrange(desc(days_sick)) %>%
+  select(-n) %>%
+  knitr::kable()
+```
+
+
+### COVID-19 testing status / situation
+ 
+Respondant's COVID-19 test status at time of the survey response, for those who reported being sick.
+
+```{r}
+wcc_df %>% 
+  filter(!is.na(days_sick)) %>% 
+  group_by(testing_situation) %>%
+  tally() %>% 
+  mutate(number_respondents = ifelse(n > 4, as.character(n),"<= 4")) %>% 
+  arrange(desc(n)) %>%
+  select(-n) %>%
+  knitr::kable()
+```
+
+
+```{r, fig.width= 10}
+# wcc_df$`By clicking AGREE, you are stating that you (or a child or someone needing help) are currently sick, 18 years or over, and agreeing to share symptom information.`
+
+wcc_df %>% 
+  filter(
+    !is.na(days_sick)
+    , !is.na(testing_situation)
+    , !(testing_situation %in% c(
+        "Other","Tested and WAITING for results",
+        "Tested and NEGATIVE","Tested and POSITIVE"
+    ))
+  ) %>% 
+  ggplot(
+    aes(
+      x = testing_situation
+      , fill = testing_situation
+    )
+  ) + 
+  geom_bar(stat = "count") + 
+  scale_fill_discrete() + 
+  theme_bw() + 
+  # coord_flip() + 
+  theme(
+    axis.text.x = element_blank()
+    , legend.position = "bottom"
+  ) 
+  
+```
+
+
+
+```{r, fig.width= 10}
+# wcc_df$`By clicking AGREE, you are stating that you (or a child or someone needing help) are currently sick, 18 years or over, and agreeing to share symptom information.`
+# 
+# ### Test status by days sick
+# wcc_df %>% 
+#   filter(
+#     !is.na(days_sick)
+#     , !is.na(testing_situation)
+#     , testing_situation != "Other"
+#   ) %>% 
+#   ggplot(
+#     aes(
+#       x = testing_situation
+#       , fill = testing_situation
+#     )
+#   ) + 
+#   geom_bar(stat = "count") + 
+#   scale_fill_discrete() + 
+#   theme_bw() + 
+#   # coord_flip() + 
+#   theme(
+#     axis.text.x = element_blank()
+#     , legend.position = "bottom"
+#   ) + 
+#   facet_grid(
+#     days_sick_interval~.
+#     , scales = "free_y"
+#   )
+#   
+```
+
+
+
