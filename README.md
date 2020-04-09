@@ -32,11 +32,12 @@ To take the survey, please:
 Here is some sample language you can copy and paste into your email, any messaging app, or social media to share the word. Please help us to reach as many sick people as possible!
 
 ---
-Hi friends, in order to “flatten the curve”, we need to know more about what and where COVID-19 symptoms are. Testing is limited, so an online survey has been developed (in Milwaukee!).
 
-The idea is simple:  If you or a loved one are sick, whether or not you have had any test for COVID-19, please use a phone or computer and go to [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl) and report symptoms confidentially.
-
-Would you help to share by passing this message along to your friends and family members?
+> Hi friends, in order to “flatten the curve”, we need to know more about what and where COVID-19 symptoms are. Testing is limited, so an online survey has been developed (in Milwaukee!).
+>
+> The idea is simple:  If you or a loved one are sick, whether or not you have had any test for COVID-19, please use a phone or computer and go to WeCountCOVID19.com and report symptoms confidentially.
+>
+> More information is provided at https://bit.ly/2XlXl92. Would you help to share by passing this message along to your friends and family members?
 
 ## Questions?
 
