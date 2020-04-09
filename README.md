@@ -15,6 +15,16 @@ The [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3
 This survey was created by a Epidemiology professor. We will soon be sharing data analysis from the survey to help local communities identify the risks they face, and to take necessary measures to protect citizens. Please help to share this survey with anyone who may be ill - we hope that their survey response will help to keep people safe and healthy.
 
 
+### Taking the survey
+
+To take the survey, please:
+
+1. Go to [WeCountCOVID19.com] on a smartphone, tablet, or computer
+2. Read the brief instructions
+3. Click on _Agree_ to agree to the instructions
+4. Fill out the confidential 5-minute survey
+
+
 ## Please share the survey!
 
 Here is some sample language you can copy and paste into your email, any messaging app, or social media to share the word. Please help us to reach as many sick people as possible!
