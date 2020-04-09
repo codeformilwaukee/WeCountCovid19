@@ -12,7 +12,11 @@ The [WeCountCOVID19.com](https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3
    - This is a confidential survey.
 - **If you are not sick**, please pass this survey along to 3 friends.
 
-This survey was created by a Epidemiology professor. We will soon be sharing data analysis from the survey to help local communities identify the risks they face, and to take necessary measures to protect citizens. Please help to share this survey with anyone who may be ill - we hope that their survey response will help to keep people safe and healthy.
+### Why take the survey?
+
+This survey was created by a Epidemiology professor to help determine coronavirus risk by geographical location. We will soon link to public data analysis from the survey to help local communities identify the risks they face. Your survey survey response can help your local community to make data-driven policy decisions to protect citizens. 
+
+Please help to share this survey with anyone who may be ill - we hope that their survey response will help to keep people safe and healthy.
 
 
 ### Taking the survey
