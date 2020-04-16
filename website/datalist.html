@@ -23,7 +23,7 @@
                         <v-list-item-title>Home</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="datalink.html">
+                <v-list-item link href="datalist.html">
                     <v-list-item-action>
                         <v-icon>fas fa-chart-line</v-icon>
                     </v-list-item-action>
@@ -57,7 +57,6 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-		
         <v-app-bar
             app
             color="indigo"
@@ -68,54 +67,60 @@
             <v-spacer></v-spacer>
             <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
         </v-app-bar>
-		<v-content>
-			<v-container>
-				<v-cols>
-					<template>
-						<h2>Fill out the form below to contact us!</h2>
-						<v-form ref="form"
-						v-model="valid"
-						lazy-validation
-						
-						>
-							<v-text-field
-								  v-model="firstname"
-								  :counter="15"
-								  :rules="nameRules"
-								  label="First Name"
-								  required
-								  ></v-text-field>
-							<v-text-field
-								  v-model="lastname"
-								  :counter="15"
-								  :rules="nameRules"
-								  label="Last Name"
-								  required
-								  ></v-text-field>
-							<v-text-field
-                                v-model="email"
-                                :rules="emailRules"
-                                label="Email Address"
-                                required
-                                ></v-text-field>
-							<v-text-field
-							  v-model="emailSubject"
-							  label="Message Subject"
-							  required
-							  ></v-text-field>
-							<v-textarea
-								solo
-								name="emailBody"
-								label="Enter your message here"
-								rows="8"
-								></v-textarea>
-							<br>
-							<v-btn>Submit</v-btn>
-						</v-form>
-					</template>
-				</v-cols>
-			</v-container>
-		</v-content>
+        <v-content>
+            <v-container>
+                <v-row dense>
+                    <v-col cols="12">
+                        <h1 class="text-center mb-4">All DATA</h1>
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-card
+                            color="purple"
+                            dark
+                            max-width="400"
+                            height="100%"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">Testing Statistics</v-card-title>
+                            <v-card-subtitle>Data of tests being conducted in Wisconsin compared to other states within the country. </v-card-subtitle>
+                            <v-card-actions>
+                                <v-btn text>View Data</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-card
+                            color="purple"
+                            dark
+                            max-width="400"
+                            height="100%"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">Symptoms Per Case</v-card-title>
+                            <v-card-subtitle>Data of symptoms in each case in Wisconsin</v-card-subtitle>
+                            <v-card-actions>
+                                <v-btn text>View Data</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-card
+                            color="purple"
+                            dark
+                            max-width="400"
+                            height="100%"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">Sample Data</v-card-title>
+                            <v-card-subtitle>Data Sample of Covid-19 in Wisconsin</v-card-subtitle>
+                            <v-card-actions>
+                                <v-btn text>View Data</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-content>
         <v-footer
             color="indigo"
             app
@@ -136,18 +141,6 @@
       },
       data: () => ({
           drawer: false,
-		  firstname: '',
-		  lastname: '',
-		  nameRules: [
-		  	v => !!v || 'Name is required',
-        	v => v.length <= 15 || 'Name must be less than 15 characters'
-      		],
-		  email:'',
-		  emailRules:[ 
-        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      		],
-		  emailBody: '',
-		  emailSubject: '',
       })
     })
   </script>
