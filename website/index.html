@@ -67,6 +67,61 @@
             <v-spacer></v-spacer>
             <v-btn color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
         </v-app-bar>
+        <v-content>
+            <v-card
+                class="mx-auto"
+                outlined
+            >
+                <v-container
+                class="fill-height"
+                fluid
+                >
+                <v-row dense>
+                    <v-col cols="12">
+                        <v-card
+                            color="grey lighten-3"
+                        >
+                            <v-card-title class="headline">Welcome to WeCountCOVID-19</v-card-title>
+                            <v-card-subtitle>This will be some introductory content which we can come up with.  In order to take the survey,
+                                please clik the button below
+                            </v-card-subtitle>
+                            <v-card-actions>
+                                <v-btn href="http://www.wecountcovid19.com" text>Take Survey</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12">
+                        <v-card
+                            color="green lighten-3"
+                        >
+                            <v-card-title class="headline">Testing Rates</v-card-title>
+                            <v-row align="center" justify="center">
+                                <v-img
+                                src="https://i.ibb.co/QdHyMyT/testanalysis.png"
+                                alt="testing-analysis"
+                                aspect-ration="1"
+                                class="grey lighten-2"
+                                max-width="60%"
+                                max-height="60%"
+                                >
+                                    <template v-slot:placeholder>
+                                        <v-row
+                                            class="fill-height ma-0"
+                                            align="center"
+                                            justify="center"
+                                        >
+                                            <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                                        </v-row>
+                                    </template>
+                                </v-img>
+                            </v-row>
+                            <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
+                        </v-card>
+                    </v-col>
+                </v-row>
+                </v-container>
+            </v-card>
+        </v-content>
         <v-footer
             color="blue lighten-2"
             app
