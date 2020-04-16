@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+        <v-navigation-drawer
+            v-model="drawer"
+            app
+        >
+            <v-list dense>
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>fas fa-chart-line</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Data Analysis</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>fas fa-info-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Resources</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>far fa-question-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>FAQs</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>far fa-envelope</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Contact Us</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+		
+        <v-app-bar
+            app
+            color="indigo"
+            dark
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title>We Count COVID-19</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn color="grey">Take Survey</v-btn>
+        </v-app-bar>
+		<v-content>
+			<v-container>
+				<v-cols>
+					<template>
+						<h2>Fill out the form below to contact us!</h2>
+						<v-form ref="form"
+						v-model="valid"
+						lazy-validation
+						
+						>
+							<v-text-field
+								  v-model="firstname"
+								  :counter="15"
+								  :rules="nameRules"
+								  label="First Name"
+								  required
+								  ></v-text-field>
+							<v-text-field
+								  v-model="lastname"
+								  :counter="15"
+								  :rules="nameRules"
+								  label="Last Name"
+								  required
+								  ></v-text-field>
+							<v-text-field
+                                v-model="email"
+                                :rules="emailRules"
+                                label="Email Address"
+                                required
+                                ></v-text-field>
+							<v-text-field
+							  v-model="emailSubject"
+							  label="Message Subject"
+							  required
+							  ></v-text-field>
+							<v-textarea
+								solo
+								name="emailBody"
+								label="Enter your message here"
+								rows="8"
+								></v-textarea>
+							<br>
+							<v-btn>Submit</v-btn>
+						</v-form>
+					</template>
+				</v-cols>
+			</v-container>
+		</v-content>
+        <v-footer
+            color="indigo"
+            app
+        >
+            <span class="white--text">2020</span>
+        </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      props: {
+          source: String,
+      },
+      data: () => ({
+          drawer: false,
+		  firstname: '',
+		  lastname: '',
+		  nameRules: [
+		  	v => !!v || 'Name is required',
+        	v => v.length <= 15 || 'Name must be less than 15 characters'
+      		],
+		  email:'',
+		  emailRules:[ 
+        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+      		],
+		  emailBody: '',
+		  emailSubject: '',
+      })
+    })
+  </script>
+</body>
+</html>
