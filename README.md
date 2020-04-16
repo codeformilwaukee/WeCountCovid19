@@ -39,6 +39,14 @@ Here is some sample language you can copy and paste into your email, any messagi
 >
 > More information is provided at https://bit.ly/2XlXl92. Would you help to share by passing this message along to your friends and family members?
 
+## En Español
+
+¿Se siente enfermo? Indique sus síntomas en la encuesta confidencial aún si no se le han hecho la prueba para diagnosticar el coronavirus. Su experiencia cuenta. ¡Ud. cuenta! Disponible en inglés y español.
+
 ## Questions?
 
 If you have questions about the survey, or would like to help promote it, please contact wecountcovid-19@uwm.edu 
+
+WeCountCOVID19.com
+University of Wisconsin-Milwaukee, Joseph J. Zilber School of Public Health
+
