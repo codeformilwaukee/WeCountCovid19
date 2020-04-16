@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+        <v-navigation-drawer
+            v-model="drawer"
+            app
+        >
+            <v-list dense>
+                <v-list-item link href="index.html">
+                    <v-list-item-action>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link href="datalist.html">
+                    <v-list-item-action>
+                        <v-icon>fas fa-chart-line</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Data Analysis</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link>
+                    <v-list-item-action>
+                        <v-icon>fas fa-info-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Resources</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link href="faq.html">
+                    <v-list-item-action>
+                        <v-icon>far fa-question-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>FAQs</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link href="contact.html">
+                    <v-list-item-action>
+                        <v-icon>far fa-envelope</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Contact Us</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+        <v-app-bar
+            app
+            color="blue lighten-2"
+            dark
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title>We Count COVID-19</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
+        </v-app-bar>
+        <v-content>
+            <v-container
+            class="fill-height"
+            fluid
+            >
+                <v-row>
+                    <v-col cols="12" md="12">
+                        <v-card
+                        outlined
+                    >
+                        <v-card-title class="headline" align="center">Frequently Asked Questions</v-card-title>
+                        <v-card-subtitle class="subtitle-1">Click the questions below and find answers to common questions regarding our project and data. If there
+                            is a question not answered below, please send us a message on our contact us page.
+                        </v-card-subtitle>
+                        <template>
+                            <v-row>
+                                <v-col cols="12">
+                                    <v-dialog>
+                                        <template v-slot:activator="{ on }">
+                                            <v-card color="grey">
+                                                <v-card-title class="title" v-on="on">Sample Question Number 1</v-card-title>
+                                            </v-card>
+                                        </template>
+                                        <v-card>
+                                            <v-card-title class="headline">Sample Content Header</v-card-title>
+                                            <v-card-text>This is just some holder content to answer the first question</v-card-text>
+                                        </v-card>
+                                    </v-dialog>
+                                </v-col>
+                                <v-col cols="12">
+                                    <v-dialog>
+                                        <template v-slot:activator="{ on }">
+                                            <v-card color="grey">
+                                                <v-card-title class="title" v-on="on">Sample Question Number 2</v-card-title>
+                                            </v-card>
+                                        </template>
+                                        <v-card>
+                                            <v-card-title class="headline">Sample Content Header</v-card-title>
+                                            <v-card-text>This is just some holder content to answer the second question</v-card-text>
+                                        </v-card>
+                                    </v-dialog>
+                                </v-col>
+                                <v-col cols="12">
+                                    <v-dialog>
+                                        <template v-slot:activator="{ on }">
+                                            <v-card color="grey">
+                                                <v-card-title class="title" v-on="on">Sample Question Number 3</v-card-title>
+                                            </v-card>
+                                        </template>
+                                        <v-card>
+                                            <v-card-title class="headline">Sample Content Header</v-card-title>
+                                            <v-card-text>This is just some holder content to answer the third question</v-card-text>
+                                        </v-card>
+                                    </v-dialog>
+                                </v-col>
+                                <v-col cols="12">
+                                    <v-dialog>
+                                        <template v-slot:activator="{ on }">
+                                            <v-card color="grey">
+                                                <v-card-title class="title" v-on="on">Sample Question Number 4</v-card-title>
+                                            </v-card>
+                                        </template>
+                                        <v-card>
+                                            <v-card-title class="headline">Sample Content Header</v-card-title>
+                                            <v-card-text>This is just some holder content to answer the fourth question</v-card-text>
+                                        </v-card>
+                                    </v-dialog>
+                                </v-col>
+                            </v-row>
+                        </template>
+                    </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
+        </v-content>
+        <v-footer
+            color="blue lighten-2"
+            app
+        >
+            <span class="white--text">2020</span>
+        </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      props: {
+          source: String,
+      },
+      data: () => ({
+          drawer: false,
+      }),
+    })
+  </script>
+</body>
+</html>

@@ -23,7 +23,7 @@
                         <v-list-item-title>Home</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="datalink.html">
+                <v-list-item link href="datalist.html">
                     <v-list-item-action>
                         <v-icon>fas fa-chart-line</v-icon>
                     </v-list-item-action>
@@ -39,7 +39,7 @@
                         <v-list-item-title>Resources</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link href="faq.html">
                     <v-list-item-action>
                         <v-icon>far fa-question-circle</v-icon>
                     </v-list-item-action>
@@ -70,11 +70,10 @@
         </v-app-bar>
 		<v-content>
 			<v-container>
-				<v-cols>
+				<v-col>
 					<template>
 						<h2>Fill out the form below to contact us!</h2>
 						<v-form ref="form"
-						v-model="valid"
 						lazy-validation
 						
 						>
@@ -113,7 +112,7 @@
 							<v-btn>Submit</v-btn>
 						</v-form>
 					</template>
-				</v-cols>
+				</v-col>
 			</v-container>
 		</v-content>
         <v-footer
