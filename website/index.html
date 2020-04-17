@@ -14,6 +14,8 @@
         <v-navigation-drawer
             v-model="drawer"
             app
+            color="#00a8e1"
+            dark
         >
             <v-list dense>
                 <v-list-item link href="index.html">
@@ -60,7 +62,7 @@
         </v-navigation-drawer>
         <v-app-bar
             app
-            color="blue lighten-2"
+            color="#f7a800"
             dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -72,6 +74,7 @@
             <v-card
                 class="mx-auto"
                 outlined
+                color="#0d2240"
             >
                 <v-container
                 class="fill-height"
@@ -80,20 +83,20 @@
                 <v-row dense>
                     <v-col cols="12">
                         <v-card
-                            color="grey lighten-3"
+                            color="white"
                         >
                             <v-card-title class="headline">Welcome to WeCountCOVID-19</v-card-title>
                             <v-card-subtitle>This will be some introductory content which we can come up with.  In order to take the survey,
                                 please clik the button below
                             </v-card-subtitle>
                             <v-card-actions>
-                                <v-btn href="http://www.wecountcovid19.com" text>Take Survey</v-btn>
+                                <v-btn small color="#00a8e1" href="http://www.wecountcovid19.com">Take Survey</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
                     <v-col cols="12">
                         <v-card
-                            color="grey lighten-3"
+                            color="white"
                         >
                             <v-card-title class="headline">Testing Rates</v-card-title>
                             <v-row align="center" justify="center">
@@ -160,7 +163,7 @@
             </v-card>
         </v-content>
         <v-footer
-            color="blue lighten-2"
+            color="#f7a800"
             app
         >
             <span class="white--text">2020</span>
