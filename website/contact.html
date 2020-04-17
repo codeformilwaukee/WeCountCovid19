@@ -13,6 +13,8 @@
     <v-app>
         <v-navigation-drawer
             v-model="drawer"
+			color="#00a8e1"
+			dark
             app
         >
             <v-list dense>
@@ -61,7 +63,7 @@
 		
         <v-app-bar
             app
-            color="blue lighten-2"
+            color="#f7a800"
             dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -70,9 +72,15 @@
             <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
         </v-app-bar>
 		<v-content>
-			<v-container>
+			<v-card
+                class="mx-auto"
+                outlined
+                color="#0d2240"
+				pl-2
+            >
+				<v-container>
 				<v-col>
-					<template>
+					<v-card color="white" class="pa-7">
 						<h2>Fill out the form below to contact us!</h2>
 						<v-form ref="form"
 						lazy-validation
@@ -110,14 +118,17 @@
 								rows="8"
 								></v-textarea>
 							<br>
-							<v-btn>Submit</v-btn>
+							<v-card-actions>
+                                <v-btn color="#00a8e1" dark>Submit</v-btn>
+                            </v-card-actions>
 						</v-form>
-					</template>
+					</v-card>
 				</v-col>
 			</v-container>
+			</v-card>
 		</v-content>
         <v-footer
-            color="blue lighten-2"
+            color="#f7a800"
             app
         >
             <span class="white--text">2020</span>
