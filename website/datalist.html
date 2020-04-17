@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" type="image/png" href="images/favicon2.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
@@ -59,7 +60,7 @@
         </v-navigation-drawer>
         <v-app-bar
             app
-            color="indigo"
+            color="#f7a800"
             dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -68,6 +69,7 @@
             <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
         </v-app-bar>
         <v-content>
+            <!-- Data Page That Holds Sorts Of Data -->
             <v-container>
                 <v-row dense>
                     <v-col cols="12">
@@ -84,7 +86,7 @@
                             <v-card-title class="headline">Testing Statistics</v-card-title>
                             <v-card-subtitle>Data of tests being conducted in Wisconsin compared to other states within the country. </v-card-subtitle>
                             <v-card-actions>
-                                <v-btn text>View Data</v-btn>
+                                <v-btn text link href="data.html">View Data</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
@@ -99,7 +101,7 @@
                             <v-card-title class="headline">Symptoms Per Case</v-card-title>
                             <v-card-subtitle>Data of symptoms in each case in Wisconsin</v-card-subtitle>
                             <v-card-actions>
-                                <v-btn text>View Data</v-btn>
+                                <v-btn text link href="data.html">View Data</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
@@ -114,15 +116,16 @@
                             <v-card-title class="headline">Sample Data</v-card-title>
                             <v-card-subtitle>Data Sample of Covid-19 in Wisconsin</v-card-subtitle>
                             <v-card-actions>
-                                <v-btn text>View Data</v-btn>
+                                <v-btn text link href="data.html">View Data</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
                 </v-row>
             </v-container>
+            <!-- End Of Data Page -->
         </v-content>
         <v-footer
-            color="indigo"
+            color="#f7a800"
             app
         >
             <span class="white--text">2020</span>
