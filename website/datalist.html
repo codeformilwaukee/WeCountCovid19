@@ -13,6 +13,8 @@
     <v-app>
         <v-navigation-drawer
             v-model="drawer"
+			color="#00a8e1"
+			dark
             app
         >
             <v-list dense>
@@ -32,7 +34,7 @@
                         <v-list-item-title>Data Analysis</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link href="https://www.covid19inwi.com/">
                     <v-list-item-action>
                         <v-icon>fas fa-info-circle</v-icon>
                     </v-list-item-action>
@@ -70,15 +72,20 @@
         </v-app-bar>
         <v-content>
             <!-- Data Page That Holds Sorts Of Data -->
-            <v-container>
-                <v-row dense>
+            <v-card
+                class="mx-auto"
+                outlined
+                color="#0d2240"
+				height="100%"
+            >
+			<v-container>
+                <v-row dense height="100%">
                     <v-col cols="12">
-                        <h1 class="text-center mb-4">All DATA</h1>
+                        <h1 class="text-center mb-4 white--text">All DATA</h1>
                     </v-col>
                     <v-col cols="12" md="4">
                         <v-card
-                            color="purple"
-                            dark
+                            color="white"
                             max-width="400"
                             height="100%"
                             class="mx-auto"
@@ -92,8 +99,7 @@
                     </v-col>
                     <v-col cols="12" md="4">
                         <v-card
-                            color="purple"
-                            dark
+                            color="white"
                             max-width="400"
                             height="100%"
                             class="mx-auto"
@@ -107,8 +113,7 @@
                     </v-col>
                     <v-col cols="12" md="4">
                         <v-card
-                            color="purple"
-                            dark
+                            color="white"
                             max-width="400"
                             height="100%"
                             class="mx-auto"
@@ -122,6 +127,7 @@
                     </v-col>
                 </v-row>
             </v-container>
+			</v-card>
             <!-- End Of Data Page -->
         </v-content>
         <v-footer
