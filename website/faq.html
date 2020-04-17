@@ -14,6 +14,8 @@
         <v-navigation-drawer
             v-model="drawer"
             app
+            color="#00a8e1"
+            dark
         >
             <v-list dense>
                 <v-list-item link href="index.html">
@@ -60,7 +62,7 @@
         </v-navigation-drawer>
         <v-app-bar
             app
-            color="blue lighten-2"
+            color="#f7a800"
             dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -68,16 +70,25 @@
             <v-spacer></v-spacer>
             <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
         </v-app-bar>
-        <v-content>
-            <v-container
-            class="fill-height"
-            fluid
+        <v-content color="black">
+            <v-card
+                class="mx-auto"
+                outlined
+                color="#0d2240"
+                height="100%"
             >
+                <v-container
+                    class="fill-height"
+                    fluid
+                >
                 <v-row>
                     <v-col cols="12" md="12">
                         <v-card
-                        outlined
-                    >
+                            class="mx-auto"
+                            width="800"
+                            height="500"
+                            outlined
+                        >
                         <v-card-title class="headline" align="center">Frequently Asked Questions</v-card-title>
                         <v-card-subtitle class="subtitle-1">Click the questions below and find answers to common questions regarding our project and data. If there
                             is a question not answered below, please send us a message on our contact us page.
@@ -87,7 +98,7 @@
                                 <v-col cols="12">
                                     <v-dialog>
                                         <template v-slot:activator="{ on }">
-                                            <v-card color="grey">
+                                            <v-card color="grey" width="600" class="mx-auto">
                                                 <v-card-title class="title" v-on="on">Sample Question Number 1</v-card-title>
                                             </v-card>
                                         </template>
@@ -100,7 +111,7 @@
                                 <v-col cols="12">
                                     <v-dialog>
                                         <template v-slot:activator="{ on }">
-                                            <v-card color="grey">
+                                            <v-card color="grey" width="600" class="mx-auto">
                                                 <v-card-title class="title" v-on="on">Sample Question Number 2</v-card-title>
                                             </v-card>
                                         </template>
@@ -113,7 +124,7 @@
                                 <v-col cols="12">
                                     <v-dialog>
                                         <template v-slot:activator="{ on }">
-                                            <v-card color="grey">
+                                            <v-card color="grey" width="600" class="mx-auto">
                                                 <v-card-title class="title" v-on="on">Sample Question Number 3</v-card-title>
                                             </v-card>
                                         </template>
@@ -126,7 +137,7 @@
                                 <v-col cols="12">
                                     <v-dialog>
                                         <template v-slot:activator="{ on }">
-                                            <v-card color="grey">
+                                            <v-card color="grey" width="600" class="mx-auto">
                                                 <v-card-title class="title" v-on="on">Sample Question Number 4</v-card-title>
                                             </v-card>
                                         </template>
@@ -142,9 +153,10 @@
                     </v-col>
                 </v-row>
             </v-container>
+            </v-card>
         </v-content>
         <v-footer
-            color="blue lighten-2"
+            color="#f7a800"
             app
         >
             <span class="white--text">2020</span>
