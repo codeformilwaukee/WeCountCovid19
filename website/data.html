@@ -13,6 +13,8 @@
     <v-app>
         <v-navigation-drawer
             v-model="drawer"
+			color="#00a8e1"
+			dark
             app
         >
            <v-list dense>
@@ -32,7 +34,7 @@
                         <v-list-item-title>Data Analysis</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link>
+                <v-list-item link href="https://www.covid19inwi.com/">
                     <v-list-item-action>
                         <v-icon>fas fa-info-circle</v-icon>
                     </v-list-item-action>
@@ -60,7 +62,7 @@
         </v-navigation-drawer>
         <v-app-bar
             app
-            color="indigo"
+            color="#f7a800"
             dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
@@ -68,7 +70,14 @@
             <v-spacer></v-spacer>
             <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
         </v-app-bar>
-        <v-content class="mt-12 grey lighten-2">
+		<v-card
+                class="mx-auto"
+                outlined
+                color="#0d2240"
+				height="100%"
+				width="100%"
+            >
+        <v-content class="mt-12 #0d2240 white--text">
             <!-- Template for Data Analysis -->
             <template>
                 <h1 class="text-center mb-4">Testing Statistics</h1>
@@ -82,8 +91,9 @@
             </template>
             <!-- End of Data Analysis Template -->
         </v-content>
+		</v-card>
         <v-footer
-            color="indigo"
+            color="#f7a800"
             app
         >
             <span class="white--text">2020</span>
