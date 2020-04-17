@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '{your-pixel-id-goes-here}');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
   <link rel="shortcut icon" type="image/png" href="images/favicon2.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
@@ -94,9 +112,10 @@
                             </v-card-actions>
                         </v-card>
                     </v-col>
-                    <v-col cols="12">
+                    <v-col cols="6">
                         <v-card
                             color="white"
+                            class="mx-auto"
                         >
                             <v-card-title class="headline">Testing Rates</v-card-title>
                             <v-row align="center" justify="center">
@@ -122,8 +141,37 @@
                             <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
                         </v-card>
                     </v-col>
+                    <v-col cols="6">
+                        <v-card
+                            color="white"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">Testing Rates</v-card-title>
+                            <v-row align="center" justify="center">
+                                <v-img
+                                src="https://files.slack.com/files-pri/T011D6CKZ1T-F011NRHFJ3D/cough_and_fever_counts_v01_asof_20200409.png"
+                                alt="cough-fever"
+                                aspect-ration="1"
+                                class="grey lighten-2"
+                                max-width="60%"
+                                max-height="60%"
+                                >
+                                    <template v-slot:placeholder>
+                                        <v-row
+                                            class="fill-height ma-0"
+                                            align="center"
+                                            justify="center"
+                                        >
+                                            <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                                        </v-row>
+                                    </template>
+                                </v-img>
+                            </v-row>
+                            <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
+                        </v-card>
+                    </v-col>
                     <v-col cols="12" md="4">
-                        <v-card>
+                        <v-card href="datalist.html">
                             <v-img
                                 src="https://i.ibb.co/fS3SDp2/dataimage.jpg"
                                 class="white--text align-end"
@@ -147,7 +195,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="4">
-                        <v-card>
+                        <v-card href="faq.html">
                             <v-img
                                 src="https://i.ibb.co/KhdyyXf/faqs.jpg"
                                 class="white--text align-end"
