@@ -13,11 +13,11 @@
     <v-app>
         <v-navigation-drawer
             v-model="drawer"
-			color="#00a8e1"
-			dark
             app
+            color="#00a8e1"
+            dark
         >
-           <v-list dense>
+            <v-list dense>
                 <v-list-item link href="index.html">
                     <v-list-item-action>
                         <v-icon>mdi-home</v-icon>
@@ -26,12 +26,12 @@
                         <v-list-item-title>Home</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="datalist.html">
+                <v-list-item link href="gethelp.html">
                     <v-list-item-action>
-                        <v-icon>fas fa-chart-line</v-icon>
+                        <v-icon>fas fa-medkit</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Data Analysis</v-list-item-title>
+                        <v-list-item-title>Get Help</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item link href="https://www.covid19inwi.com/">
@@ -42,14 +42,14 @@
                         <v-list-item-title>Resources</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="faq.html">
+<!--                <v-list-item link href="faq.html">
                     <v-list-item-action>
                         <v-icon>far fa-question-circle</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>FAQs</v-list-item-title>
                     </v-list-item-content>
-                </v-list-item>
+                </v-list-item>-->
                 <v-list-item link href="contact.html">
                     <v-list-item-action>
                         <v-icon>far fa-envelope</v-icon>
@@ -68,33 +68,69 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>We Count COVID-19</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn small color="grey" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
+            <v-btn large color="#0d2240" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
         </v-app-bar>
-		<v-card
+        <v-content>
+            <v-card
                 class="mx-auto"
                 outlined
                 color="#0d2240"
 				height="100%"
-				width="100%"
             >
-        <v-content class="mt-12 #0d2240 white--text">
-            <!-- Template for Data Analysis -->
-            <template>
-                <h1 class="text-center mb-4">Symptoms Per Zipcode</h1>
-                <v-card max-width="600" class="mx-auto mb-6">
-                    <v-img src="https://files.slack.com/files-pri/T011D6CKZ1T-F011XUQRMCM/screen_shot_2020-04-16_at_11.25.49_am.png">
-                    </v-img>
-                </v-card> 
-                <v-card max-width="600" class="mx-auto" color="white">
-                    <p class="text-left">Statistics to show symptoms per zipcode, and the potential areas that are at risk for future outbreaks</p>
-                </v-card>
-                <div class="text-center">
-                    <v-btn color="#00a8e1" dark href="datalist.html">Return</v-btn>
-                  </div>
-            </template>
-            <!-- End of Data Analysis Template -->
+			<v-container>
+                <v-row dense height="100%">
+                    <v-col cols="12">
+                        <h1 class="text-center mb-4 white--text">Get Help</h1>
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-card
+                            color="white"
+                            max-width="400"
+                            height="100%"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">Symptom Checker</v-card-title>
+                            <v-card-text>Check your risk for COVID-19</v-card-text>
+							<v-card-text>Compruebe su riesgo de COVID‑19</v-card-text>
+                            <v-card-actions>
+                                <v-btn color="#00a8e1" class="inline" dark link href="https://c19check.com/start">Go to Site / Ir al Sitio</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-card
+                            color="white"
+                            max-width="400"
+                            height="100%"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">CDC</v-card-title>
+                            <v-card-text>Centers for Disease Control and Prevention Coronavirus Site</v-card-text>
+							<v-card-text>Centros para el Control y Prevencion de Enfermedades</v-card-text>
+                            <v-card-actions>
+                                <v-btn color="#00a8e1" class="inline" dark href="symptoms.html">Go to Site / Ir al Sitio</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                    <v-col cols="12" md="4">
+                        <v-card
+                            color="white"
+                            max-width="400"
+                            height="100%"
+                            class="mx-auto"
+                        >
+                            <v-card-title class="headline">Symptoms Per Zipcode</v-card-title>
+                            <v-card-subtitle>Data of symptoms per zipcode in Milwaukee county</v-card-subtitle>
+                            <v-card-actions>
+                                <v-btn color="#00a8e1" dark href="zipcode.html">View Data</v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-col>
+                </v-row>
+            </v-container>
+			</v-card>
+            <!-- End Of Data Page -->
         </v-content>
-		</v-card>
         <v-footer
             color="#f7a800"
             app

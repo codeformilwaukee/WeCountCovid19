@@ -13,9 +13,9 @@
     <v-app>
         <v-navigation-drawer
             v-model="drawer"
-			color="#00a8e1"
-			dark
             app
+            color="#00a8e1"
+            dark
         >
             <v-list dense>
                 <v-list-item link href="index.html">
@@ -28,10 +28,10 @@
                 </v-list-item>
                 <v-list-item link href="datalist.html">
                     <v-list-item-action>
-                        <v-icon>fas fa-chart-line</v-icon>
+                        <v-icon>fas fa-medkit</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Data Analysis</v-list-item-title>
+                        <v-list-item-title>Get Help</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item link href="https://www.covid19inwi.com/">
@@ -42,14 +42,14 @@
                         <v-list-item-title>Resources</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="faq.html">
+<!--                <v-list-item link href="faq.html">
                     <v-list-item-action>
                         <v-icon>far fa-question-circle</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>FAQs</v-list-item-title>
                     </v-list-item-content>
-                </v-list-item>
+                </v-list-item>-->
                 <v-list-item link href="contact.html">
                     <v-list-item-action>
                         <v-icon>far fa-envelope</v-icon>
@@ -59,8 +59,7 @@
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
-        </v-navigation-drawer>
-		
+        </v-navigation-drawer>		
         <v-app-bar
             app
             color="#f7a800"
@@ -69,7 +68,7 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>We Count COVID-19</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
+            <v-btn large color="#0d2240" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
         </v-app-bar>
 		<v-content color="#0d2240">
 			<v-card

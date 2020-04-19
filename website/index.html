@@ -15,7 +15,7 @@
     fbq('track', 'PageView');
   </script>
   <noscript>
-    <img height="1" width="1" style="display:none" 
+    <img height="1" width="1" style="display:none" alt="fb pixel" 
          src="https://www.facebook.com/tr?id={your-pixel-id-goes-here}&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
@@ -44,12 +44,12 @@
                         <v-list-item-title>Home</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="datalist.html">
+                <v-list-item href="gethelp.html">
                     <v-list-item-action>
-                        <v-icon>fas fa-chart-line</v-icon>
+                        <v-icon>fas fa-medkit</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Data Analysis</v-list-item-title>
+                        <v-list-item-title>Get Help</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item link href="https://www.covid19inwi.com/">
@@ -60,14 +60,14 @@
                         <v-list-item-title>Resources</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item link href="faq.html">
+<!--                <v-list-item link href="faq.html">
                     <v-list-item-action>
                         <v-icon>far fa-question-circle</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>FAQs</v-list-item-title>
                     </v-list-item-content>
-                </v-list-item>
+                </v-list-item>-->
                 <v-list-item link href="contact.html">
                     <v-list-item-action>
                         <v-icon>far fa-envelope</v-icon>
@@ -86,7 +86,7 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>We Count COVID-19</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn small color="grey" href="http://www.wecountcovid19.com">Take Survey</v-btn>
+            <v-btn large color="#0d2240" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
         </v-app-bar>
         <v-content>
             <v-card
@@ -104,26 +104,24 @@
                             color="#00a8e1"
                             dark
                         >
-                            <v-card-title class="headline">Welcome to WeCountCOVID-19</v-card-title>
-                            <v-card-subtitle>WeCountCOVID19.com is an online survey that people can use to report their symptoms when they are sick, 
-                                regardless of whether they have received a coronavirus test.  The goal is to reach every person in the US who is 
-                                potentially infected with coronavirus.  This is incredibly important because it will help to inform what we need 
-                                to do, and we lack the kits for this information.
-                            </v-card-subtitle>
+                            <v-card-title class="headline">Welcome to We Count COVID-19</v-card-title>
+                            <v-card-text> WeCountCOVID19.com is an online survey with the goal of helping to understand people’s experiences of COVID-19 symptoms and other illnesses by neighborhood and time, giving a very important picture in addition to lab testing.
+                            </v-card-text>
                             <v-card-actions>
-                                <v-btn small color="#f7a800" dark href="http://www.wecountcovid19.com">Take Survey</v-btn>
+                                <v-btn x-large color="#0d2240" dark href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="12" md="6">
                         <v-card
                             color="white"
                             class="mx-auto"
                         >
-                            <v-card-title class="headline">Testing Rates</v-card-title>
+                            <v-card-title class="headline">Health</v-card-title>
+							<v-card-subtitle>of Wisconsin Respondents</v-card-subtitle>
                             <v-row align="center" justify="center">
                                 <v-img
-                                src="https://i.ibb.co/QdHyMyT/testanalysis.png"
+                                src="images/health_pie.gif"
                                 alt="testing-analysis"
                                 aspect-ration="1"
                                 class="grey lighten-2"
@@ -141,18 +139,18 @@
                                     </template>
                                 </v-img>
                             </v-row>
-                            <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
                         </v-card>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="12" md="6">
                         <v-card
                             color="white"
                             class="mx-auto"
                         >
-                            <v-card-title class="headline">Symptoms Per Person</v-card-title>
+                            <v-card-title class="headline">Testing</v-card-title>
+							<v-card-subtitle>of Persons with Symptoms</v-card-subtitle>
                             <v-row align="center" justify="center">
                                 <v-img
-                                src="https://files.slack.com/files-pri/T011D6CKZ1T-F011NRHFJ3D/cough_and_fever_counts_v01_asof_20200409.png"
+                                src="images/testing_pie.gif"
                                 alt="cough-fever"
                                 aspect-ration="1"
                                 class="grey lighten-2"
@@ -170,43 +168,43 @@
                                     </template>
                                 </v-img>
                             </v-row>
-                            <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
+                        </v-card>
+                    </v-col>
+					<v-col cols="12">
+						<v-card color="white" 
+								class="mx-auto">
+							<v-card-text>
+							 These summaries pertain to survey respondents reporting a Wisconsin zip code. People responding are those who learned of the survey and were motivated to report their symptoms, and do not represent all people. We defined “COVID-like symptoms” using CDC website reports of typical symptoms, defined as reporting respiratory symptoms (moderate or severe cough, chest pain, or difficulty breathing) or fever of 100 or higher, and without a flu diagnosis. We defined “high risk” using CDC guidelines for testing priority for those at highest risk of complications from infection, defined as aged 65+, having an underlying medical condition, or residing in a long-term care facility.  Persons who “sought testing” were told by a medical provider that they did not qualify or to stay home to prevent further coronavirus spread.
+							</v-card-text>
+						</v-card>
+					</v-col>
+                    <v-col cols="12" md="4">
+                        <v-card href="gethelp.html"
+								color="#00A8E1"
+                                class="white--text align-end"
+                                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                                height="100px">
+                                <v-card-title>Get Help</v-card-title>
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="4">
-                        <v-card href="datalist.html">
-                            <v-img
-                                src="https://i.ibb.co/fS3SDp2/dataimage.jpg"
-                                class="white--text align-end"
+                        <v-card href=""
+								color="#00A8E1"
+								class="white--text align-end"
                                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                                height="200px"
-                            >
-                                <v-card-title>Data Analysis</v-card-title>
-                            </v-img>
+                                height="100px">
+                                <v-card-title>Survey Responses</v-card-title>
+								<v-card-subtitle class="white--text subtitle-2">by Time and Place</v-card-subtitle>
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="4">
-                        <v-card link href="https://www.covid19inwi.com/">
-                            <v-img
-                                src="https://i.ibb.co/5Fk0HPs/covidwi.jpg" 
+                        <v-card link href="https://www.covid19inwi.com/"
+                                color="#00A8E1"
                                 class="white--text align-end"
                                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                                height="200px"
+                                height="100px"
                             >
                                 <v-card-title>Resources</v-card-title>
-                            </v-img>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card href="faq.html">
-                            <v-img
-                                src="https://i.ibb.co/KhdyyXf/faqs.jpg"
-                                class="white--text align-end"
-                                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                                height="200px"
-                            >
-                                <v-card-title>FAQs</v-card-title>
-                            </v-img>
                         </v-card>
                     </v-col>
                 </v-row>
