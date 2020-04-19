@@ -86,7 +86,7 @@
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title>We Count COVID-19</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn small color="grey" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
+            <v-btn large color="#0d2240" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
         </v-app-bar>
         <v-content>
             <v-card
@@ -104,23 +104,24 @@
                             color="#00a8e1"
                             dark
                         >
-                            <v-card-title class="headline">Welcome to WeCountCOVID-19</v-card-title>
+                            <v-card-title class="headline">Welcome to We Count COVID-19</v-card-title>
                             <v-card-subtitle>WeCountCOVID19.com is an online survey that people can use to report their symptoms when they are sick, 
                                 regardless of whether they have received a coronavirus test.  The goal is to reach every person in the US who is 
                                 potentially infected with coronavirus.  This is incredibly important because it will help to inform what we need 
                                 to do, and we lack the kits for this information.
                             </v-card-subtitle>
                             <v-card-actions>
-                                <v-btn medium color="#f7a800" dark href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
+                                <v-btn x-large color="#0d2240" dark href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
                             </v-card-actions>
                         </v-card>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="12" md="6">
                         <v-card
                             color="white"
                             class="mx-auto"
                         >
-                            <v-card-title class="headline">Testing Rates</v-card-title>
+                            <v-card-title class="headline">Health</v-card-title>
+							<v-card-subtitle>of Wisconsin Respondents</v-card-subtitle>
                             <v-row align="center" justify="center">
                                 <v-img
                                 src="https://i.ibb.co/QdHyMyT/testanalysis.png"
@@ -141,15 +142,15 @@
                                     </template>
                                 </v-img>
                             </v-row>
-                            <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
                         </v-card>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="12" md="6">
                         <v-card
                             color="white"
                             class="mx-auto"
                         >
-                            <v-card-title class="headline">Symptoms Per Person</v-card-title>
+                            <v-card-title class="headline">Testing</v-card-title>
+							<v-card-subtitle>of Persons with Symptoms</v-card-subtitle>
                             <v-row align="center" justify="center">
                                 <v-img
                                 src="https://files.slack.com/files-pri/T011D6CKZ1T-F011NRHFJ3D/cough_and_fever_counts_v01_asof_20200409.png"
@@ -170,9 +171,16 @@
                                     </template>
                                 </v-img>
                             </v-row>
-                            <v-card-subtitle>This is where the brief analysis will go which will be different than on the individual pages</v-card-subtitle>
                         </v-card>
                     </v-col>
+					<v-col cols="12">
+						<v-card color="white" 
+								class="mx-auto">
+							<v-card-text>
+							These summaries pertain to survey respondents reporting a Wisconsin zip code. People responding are those who learned of the survey and were motivated to report their symptoms, and do not represent all people. We defined COVID-like symptoms using CDC website reports of typical symptoms, defined as reporting respiratory symptoms (moderate or severe cough, chest pain, or difficulty breathing) or fever of 100 or higher, and without a flu diagnosis. We defined “at risk” using CDC guidelines for testing priority, defined as aged 65+, having an underlying medical condition, or residing in a long-term care facility.
+							</v-card-text>
+						</v-card>
+					</v-col>
                     <v-col cols="12" md="4">
                         <v-card href="datalist.html">
                             <v-img
@@ -186,15 +194,7 @@
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="4">
-                        <v-card link href="https://www.covid19inwi.com/">
-                            <v-img
-                                src="https://i.ibb.co/5Fk0HPs/covidwi.jpg" 
-                                class="white--text align-end"
-                                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                                height="200px"
-                            >
-                                <v-card-title>Resources</v-card-title>
-                            </v-img>
+                        <v-card height ="100%" color="#0d2240" link href="https://www.covid19inwi.com/">
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="4">
