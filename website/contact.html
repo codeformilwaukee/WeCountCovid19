@@ -124,7 +124,16 @@
 								></v-textarea>
 							<br>
 							<v-card-actions>
-                                <v-btn type="submit" value="submit" color="#00a8e1" dark>Submit</v-btn>
+                                <v-dialog width="50%">
+                                    <template v-slot:activator="{ on }">
+                                        <v-btn type="submit" value="submit" color="#00a8e1" dark v-on="on">Submit</v-btn>
+                                    </template>
+                                    <v-card>
+                                        <v-card-title class="healine">Thank You!</v-card-title>
+                                        <v-card-text>Your message has been received and we will respond as soon as we can.</v-card-text>
+                                        <v-btn color="#00a8e1" text href="index.html">Close</v-btn>
+                                    </v-card>
+                                </v-dialog>
                             </v-card-actions>
 						</v-form>
 					</v-card>
@@ -170,16 +179,16 @@
 		  emailBody: '',
 		  emailSubject: '',
       }),
-      methods: {
-          sendEmail: (e) => {
-              emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
-              .then((result) => {
-                  console.log('SUCCESS!', result.status, result.text);
-              }, (error) => {
-                  console.log('Failed...', error);
-              });
-          }
-      }
+    //   methods: {
+    //       sendEmail: (e) => {
+    //           emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
+    //           .then((result) => {
+    //               console.log('SUCCESS!', result.status, result.text);
+    //           }, (error) => {
+    //               console.log('Failed...', error);
+    //           });
+    //       }
+    //   }
     })
   </script>
 </body>
