@@ -90,6 +90,8 @@
 								  v-model="firstName"
                                   label="First Name"
                                   name="firstName"
+                                  :counter="15"
+								  :rules="nameRules"
                                   type="text"
 								  required
 								  ></v-text-field>
@@ -97,12 +99,15 @@
 								  v-model="lastName"
                                   label="Last Name"
                                   name="lastName"
+                                  :counter="15"
+								  :rules="nameRules"
                                   type="text"
 								  required
 								  ></v-text-field>
 							<v-text-field
                                 v-model="email"
                                 label="Email Address"
+                                :rules="emailRules"
                                 name="email"
                                 type="text"
                                 required
@@ -178,6 +183,13 @@
 		  email:'',
 		  emailBody: '',
 		  emailSubject: '',
+          emailRules:[ 
+        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+      		],
+          nameRules: [
+		  	v => !!v || 'Name is required',
+        	v => v.length <= 15 || 'Name must be less than 15 characters'
+            ],
       }),
       methods: {
           sendEmail: (e) => {
