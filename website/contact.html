@@ -9,157 +9,151 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-  <div id="app">
-    <v-app>
-        <v-navigation-drawer
-            v-model="drawer"
-            app
-            color="#00a8e1"
-            dark
-        >
-            <v-list dense>
-                <v-list-item link href="index.html">
-                    <v-list-item-action>
-                        <v-icon>mdi-home</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Home</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-                <v-list-item link href="datalist.html">
-                    <v-list-item-action>
-                        <v-icon>fas fa-medkit</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Get Help</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-                <v-list-item link href="https://www.covid19inwi.com/">
-                    <v-list-item-action>
-                        <v-icon>fas fa-info-circle</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Resources</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-<!--                <v-list-item link href="faq.html">
-                    <v-list-item-action>
-                        <v-icon>far fa-question-circle</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>FAQs</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>-->
-                <v-list-item link href="contact.html">
-                    <v-list-item-action>
-                        <v-icon>far fa-envelope</v-icon>
-                    </v-list-item-action>
-                    <v-list-item-content>
-                        <v-list-item-title>Contact Us</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
-        </v-navigation-drawer>		
-        <v-app-bar
-            app
-            color="#f7a800"
-            dark
-        >
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>We Count COVID-19</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-btn large color="#0d2240" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
-        </v-app-bar>
-		<v-content color="#0d2240">
-			<v-card
-                class="mx-auto"
-                outlined
-                color="#0d2240"
-                height="100%"
+    <div id="app">
+        <v-app>
+            <v-navigation-drawer
+                v-model="drawer"
+                app
+                color="#00a8e1"
+                dark
             >
-				<v-container>
-				<v-col>
-					<v-card color="white" class="pa-7 mx-auto" width="600">
-						<h2>Fill out the form below to contact us!</h2>
-						<v-form ref="form"
-						lazy-validation
-						
-						>
-							<v-text-field
-								  v-model="firstname"
-								  :counter="15"
-								  :rules="nameRules"
-								  label="First Name"
-								  required
-								  ></v-text-field>
-							<v-text-field
-								  v-model="lastname"
-								  :counter="15"
-								  :rules="nameRules"
-								  label="Last Name"
-								  required
-								  ></v-text-field>
-							<v-text-field
-                                v-model="email"
-                                :rules="emailRules"
-                                label="Email Address"
-                                required
+                <v-list dense>
+                    <v-list-item link href="index.html">
+                        <v-list-item-action>
+                            <v-icon>mdi-home</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Home</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item link href="datalist.html">
+                        <v-list-item-action>
+                            <v-icon>fas fa-medkit</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Get Help</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item link href="https://www.covid19inwi.com/">
+                        <v-list-item-action>
+                            <v-icon>fas fa-info-circle</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Resources</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+    <!--                <v-list-item link href="faq.html">
+                        <v-list-item-action>
+                            <v-icon>far fa-question-circle</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>FAQs</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>-->
+                    <v-list-item link href="contact.html">
+                        <v-list-item-action>
+                            <v-icon>far fa-envelope</v-icon>
+                        </v-list-item-action>
+                        <v-list-item-content>
+                            <v-list-item-title>Contact Us</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-navigation-drawer>		
+            <v-app-bar
+                app
+                color="#f7a800"
+                dark
+            >
+                <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+                <v-toolbar-title>We Count COVID-19</v-toolbar-title>
+                <v-spacer></v-spacer>
+                <v-btn large color="#0d2240" href="http://www.wecountcovid19.com">To the survey / A la encuesta</v-btn>
+            </v-app-bar>
+            <v-content color="#0d2240">
+                <v-card
+                    class="mx-auto"
+                    outlined
+                    color="#0d2240"
+                    height="100%"
+                >
+                    <v-container>
+                    <v-col>
+                        <v-card color="white" class="pa-7 mx-auto" width="600">
+                            <h2>Fill out the form below to contact us!</h2>
+                            <v-form ref="form"
+                            lazy-validation
+                            
+                            >
+                                <v-text-field
+                                    v-model="firstname"
+                                    :counter="15"
+                                    label="First Name"
+                                    required
                                 ></v-text-field>
-							<v-text-field
-							  v-model="emailSubject"
-							  label="Message Subject"
-							  required
-							  ></v-text-field>
-							<v-textarea
-								solo
-								name="emailBody"
-								label="Enter your message here"
-								rows="8"
-								></v-textarea>
-							<br>
-							<v-card-actions>
-                                <v-btn color="#00a8e1" dark>Submit</v-btn>
-                            </v-card-actions>
-						</v-form>
-					</v-card>
-				</v-col>
-			</v-container>
-			</v-card>
-		</v-content>
-        <v-footer
-            color="#f7a800"
-            app
-        >
-            <span class="white--text">2020</span>
-        </v-footer>
-    </v-app>
-  </div>
+                                <v-text-field
+                                    v-model="lastname"
+                                    :counter="15"
+                                    label="Last Name"
+                                    required
+                                ></v-text-field>
+                                <v-text-field
+                                    v-model="email"
+                                    label="Email Address"
+                                    required
+                                ></v-text-field>
+                                <v-text-field
+                                    v-model="emailSubject"
+                                    label="Message Subject"
+                                    required
+                                ></v-text-field>
+                                <v-textarea
+                                    solo
+                                    v-model="emailBody"
+                                    label="Enter your message here"
+                                    rows="8"
+                                ></v-textarea>
+                                <br>
+                                <v-card-actions>
+                                    <v-btn color="#00a8e1" dark>Submit</v-btn>
+                                </v-card-actions>
+                            </v-form>
+                        </v-card>
+                    </v-col>
+                </v-container>
+                </v-card>
+            </v-content>
+            <v-footer
+                color="#f7a800"
+                app
+            >
+                <span class="white--text">2020</span>
+            </v-footer>
+        </v-app>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      vuetify: new Vuetify(),
-      props: {
-          source: String,
-      },
-      data: () => ({
-          drawer: false,
-		  firstname: '',
-		  lastname: '',
-		  nameRules: [
-		  	v => !!v || 'Name is required',
-        	v => v.length <= 15 || 'Name must be less than 15 characters'
-      		],
-		  email:'',
-		  emailRules:[ 
-        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      		],
-		  emailBody: '',
-		  emailSubject: '',
-      })
-    })
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        props: {
+            source: String,
+        },
+        data: () => ({
+            drawer: false,
+            firstname: '',
+            lastname: '',
+            email:'',
+            emailBody: '',
+            emailSubject: '',
+        })
+        })
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
 </body>
 </html>
