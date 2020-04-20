@@ -179,16 +179,16 @@
 		  emailBody: '',
 		  emailSubject: '',
       }),
-    //   methods: {
-    //       sendEmail: (e) => {
-    //           emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
-    //           .then((result) => {
-    //               console.log('SUCCESS!', result.status, result.text);
-    //           }, (error) => {
-    //               console.log('Failed...', error);
-    //           });
-    //       }
-    //   }
+      methods: {
+          sendEmail: (e) => {
+              emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
+              .then((result) => {
+                  console.log('SUCCESS!', result.status, result.text);
+              }, (error) => {
+                  console.log('Failed...', error);
+              });
+          }
+      }
     })
   </script>
 </body>
