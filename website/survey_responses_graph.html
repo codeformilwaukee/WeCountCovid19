@@ -70,69 +70,27 @@
             <v-spacer></v-spacer>
             <v-btn large color="#0d2240" href="https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl">To the survey / A la encuesta</v-btn>
         </v-app-bar>
-        <v-content>
+		<v-content>
             <v-card
                 class="mx-auto"
                 outlined
                 color="#0d2240"
 				height="100%"
             >
-			<v-container>
-                <v-row prominent height="100%">
-                    <v-col cols="12">
-                        <h1 class="text-center mb-4 white--text">Get Help</h1>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card
-                            color="white"
-                            max-width="450"
-                            height="260px"
-                            class="mx-auto"
-                        >
-                            <v-card-title class="headline">Symptom Checker</v-card-title>
-                            <v-card-text>Check your risk for COVID-19</v-card-text>
-							<v-card-text>Compruebe su riesgo de COVID‑19</v-card-text>
-                            <v-card-actions>
-                                <v-btn color="#00a8e1" class="page-buttons" dark link href="https://c19check.com/start">Go to Site / Ir al Sitio</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card
-                            color="white"
-                            max-width="450"
-                            height="260px"
-                            class="mx-auto"
-                        >
-                            <v-card-title class="headline">CDC</v-card-title>
-                            <v-card-text>Centers for Disease Control and Prevention Coronavirus Site</v-card-text>
-							<v-card-text>Centros para el Control y Prevencion de Enfermedades, Sitio de Coronavirus</v-card-text>
-							<v-spacer></v-spacer>
-                            <v-card-actions>
-                                <v-btn color="#00a8e1" dark class="page-buttons" link href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">Go to Site / Ir al Sitio</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card
-                            color="white"
-                            max-width="450"
-                            height="260px"
-                            class="mx-auto"
-                        >
-                            <v-card-title class="headline">MKE Health Department</v-card-title>
-                            <v-card-text>City of Milwaukee Health Department Coronavirus Site</v-card-text>
-							<v-card-text>Departamento de Salud de la Ciudad de Milwaukee, Sitio de Coronavirus</v-card-text>
-                            <v-card-actions>
-                                <v-btn color="#00a8e1" dark class="page-buttons" link href="https://city.milwaukee.gov/Coronavirus#.XpyJ4FNKgU0">Go to Site / Ir al Sitio</v-btn>
-                            </v-card-actions>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
+				<template>
+                <h1 class="text-center mb-4 white--text">Running Total of Survey Responses</h1>
+                <v-card max-width="600" class="mx-auto mb-6">
+                    <v-img src="images/response_count_apr18.png"></v-img>
+					<v-card-text>We seek your assistance in getting the word out about an online survey being done at the University of Wisconsin-Milwaukee to help study coronavirus, also known as COVID-19. Because testing is limited, we are using the power of the internet to allow people to self-report their symptoms in Milwaukee and Wisconsin. The more people report their symptoms, the better we will understand the impact of COVID-19.
+					</v-card-text>
+                    
+                </v-card>
+                <div class="text-center">
+                    <v-btn color="#00a8e1" dark href="index.html">Return</v-btn>
+                  </div>
+            </template>
 			</v-card>
-            <!-- End Of Data Page -->
-        </v-content>
+		</v-content>
         <v-footer
             color="#f7a800"
 			height="auto"
@@ -162,11 +120,5 @@
       })
     })
   </script>
-  <style>
-	.page-buttons {
-          position: absolute;
-          bottom: 5px;
-      }
-  </style>
 </body>
 </html>
