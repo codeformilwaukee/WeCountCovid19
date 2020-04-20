@@ -87,21 +87,16 @@
 						>
 							<v-text-field
 								  v-model="firstname"
-								  :counter="15"
-								  :rules="nameRules"
 								  label="First Name"
 								  required
 								  ></v-text-field>
 							<v-text-field
 								  v-model="lastname"
-								  :counter="15"
-								  :rules="nameRules"
 								  label="Last Name"
 								  required
 								  ></v-text-field>
 							<v-text-field
                                 v-model="email"
-                                :rules="emailRules"
                                 label="Email Address"
                                 required
                                 ></v-text-field>
@@ -112,7 +107,7 @@
 							  ></v-text-field>
 							<v-textarea
 								solo
-								name="emailBody"
+								v-model="emailBody"
 								label="Enter your message here"
 								rows="8"
 								></v-textarea>
@@ -154,14 +149,7 @@
           drawer: false,
 		  firstname: '',
 		  lastname: '',
-		  nameRules: [
-		  	v => !!v || 'Name is required',
-        	v => v.length <= 15 || 'Name must be less than 15 characters'
-      		],
 		  email:'',
-		  emailRules:[ 
-        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      		],
 		  emailBody: '',
 		  emailSubject: '',
       })
