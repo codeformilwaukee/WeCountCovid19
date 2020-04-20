@@ -83,42 +83,48 @@
 						<h2>Fill out the form below to contact us!</h2>
 						<v-form ref="form"
 						lazy-validation
-						
+                        @submit.prevent="sendEmail"
+                        class="contact-form"
 						>
 							<v-text-field
-								  v-model="firstname"
-								  :counter="15"
-								  :rules="nameRules"
-								  label="First Name"
+								  v-model="firstName"
+                                  label="First Name"
+                                  name="firstName"
+                                  type="text"
 								  required
 								  ></v-text-field>
 							<v-text-field
-								  v-model="lastname"
-								  :counter="15"
-								  :rules="nameRules"
-								  label="Last Name"
+								  v-model="lastName"
+                                  label="Last Name"
+                                  name="lastName"
+                                  type="text"
 								  required
 								  ></v-text-field>
 							<v-text-field
                                 v-model="email"
-                                :rules="emailRules"
                                 label="Email Address"
+                                name="email"
+                                type="text"
                                 required
                                 ></v-text-field>
 							<v-text-field
 							  v-model="emailSubject"
-							  label="Message Subject"
+                              label="Message Subject"
+                              name="emailSubject"
+                              type="text"
 							  required
 							  ></v-text-field>
 							<v-textarea
 								solo
-								name="emailBody"
-								label="Enter your message here"
+								v-model="emailBody"
+                                label="Enter your message here"
+                                name="emailBody"
+                                type="text"
 								rows="8"
 								></v-textarea>
 							<br>
 							<v-card-actions>
-                                <v-btn color="#00a8e1" dark>Submit</v-btn>
+                                <v-btn type="submit" value="submit" color="#00a8e1" dark>Submit</v-btn>
                             </v-card-actions>
 						</v-form>
 					</v-card>
@@ -141,8 +147,14 @@
     </v-app>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init("user_oy7ChoWIZUPak6TSYKogc");
+    })();
+</script>
   <script>
     new Vue({
       el: '#app',
@@ -152,19 +164,22 @@
       },
       data: () => ({
           drawer: false,
-		  firstname: '',
-		  lastname: '',
-		  nameRules: [
-		  	v => !!v || 'Name is required',
-        	v => v.length <= 15 || 'Name must be less than 15 characters'
-      		],
+		  firstName: '',
+		  lastName: '',
 		  email:'',
-		  emailRules:[ 
-        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      		],
 		  emailBody: '',
 		  emailSubject: '',
-      })
+      }),
+      methods: {
+          sendEmail: (e) => {
+              emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
+              .then((result) => {
+                  console.log('SUCCESS!', result.status, result.text);
+              }, (error) => {
+                  console.log('Failed...', error);
+              });
+          }
+      }
     })
   </script>
 </body>
