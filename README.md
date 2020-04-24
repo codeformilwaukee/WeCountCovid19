@@ -29,3 +29,7 @@ If you have questions about the survey, or would like to help promote it, please
 www.WeCountCOVID19.com
 University of Wisconsin-Milwaukee, Joseph J. Zilber School of Public Health
 
+### Want to get involved?
+
+If you want to help us tell the stories in the survey's responses, or build the website, please contact BrianBarkley@codeformilwaukee.org
+
