@@ -80,43 +80,40 @@
 				<v-container>
 				<v-col>
 					<v-card color="white" class="pa-7 mx-auto" width="600">
-						<h2>Fill out the form below to contact us!</h2>
+                        <h2>Fill out the form below to contact us!</h2>
+                        <p v-if="errors.length">
+                            <b>Please correct the following errors(s):</b>
+                            <ul>
+                                <li v-for="error in errors">{{ error }}</li>
+                            </ul>
+                        </p>
 						<v-form ref="form"
-						lazy-validation
-                        @submit.prevent="sendEmail"
-                        class="contact-form"
-						>
+                            @submit.prevent="sendEmail"
+                            class="contact-form"
+                            v-model="valid"
+                        >
 							<v-text-field
-								  v-model="firstName"
+                                  v-model="firstName"
                                   label="First Name"
                                   name="firstName"
-                                  :counter="15"
-								  :rules="nameRules"
-                                  type="text"
 								  required
 								  ></v-text-field>
 							<v-text-field
 								  v-model="lastName"
                                   label="Last Name"
                                   name="lastName"
-                                  :counter="15"
-								  :rules="nameRules"
-                                  type="text"
 								  required
 								  ></v-text-field>
 							<v-text-field
                                 v-model="email"
                                 label="Email Address"
-                                :rules="emailRules"
                                 name="email"
-                                type="text"
                                 required
                                 ></v-text-field>
 							<v-text-field
 							  v-model="emailSubject"
                               label="Message Subject"
                               name="emailSubject"
-                              type="text"
 							  required
 							  ></v-text-field>
 							<v-textarea
@@ -124,21 +121,20 @@
 								v-model="emailBody"
                                 label="Enter your message here"
                                 name="emailBody"
-                                type="text"
 								rows="8"
 								></v-textarea>
 							<br>
 							<v-card-actions>
-                                <v-dialog width="50%">
-                                    <template v-slot:activator="{ on }">
-                                        <v-btn type="submit" value="submit" color="#00a8e1" dark v-on="on">Submit</v-btn>
-                                    </template>
-                                    <v-card>
+                                <!-- <v-dialog width="50%">
+                                    <template v-slot:activator="{ on }"> -->
+                                <v-btn type="submit" value="submit" color="#00a8e1" dark>Submit</v-btn>
+                                    <!-- </template>
+                                    <v-card v-if="!errors.length">
                                         <v-card-title class="healine">Thank You!</v-card-title>
                                         <v-card-text>Your message has been received and we will respond as soon as we can.</v-card-text>
                                         <v-btn color="#00a8e1" text href="index.html">Close</v-btn>
                                     </v-card>
-                                </v-dialog>
+                                </v-dialog> -->
                             </v-card-actions>
 						</v-form>
 					</v-card>
@@ -161,7 +157,7 @@
     </v-app>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -173,32 +169,48 @@
     new Vue({
       el: '#app',
       vuetify: new Vuetify(),
-      props: {
-          source: String,
-      },
-      data: () => ({
-          drawer: false,
-		  firstName: '',
-		  lastName: '',
-		  email:'',
-		  emailBody: '',
-		  emailSubject: '',
-          emailRules:[ 
-        	v => !v || /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-      		],
-          nameRules: [
-		  	v => !!v || 'Name is required',
-        	v => v.length <= 15 || 'Name must be less than 15 characters'
-            ],
-      }),
+      data: {
+            drawer: false,
+            valid: false,
+            errors: [],
+            firstName: null,
+            lastName: null,
+            email: null,
+            emailBody: null,
+            emailSubject: null,
+          },
       methods: {
           sendEmail: (e) => {
-              emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
-              .then((result) => {
-                  console.log('SUCCESS!', result.status, result.text);
-              }, (error) => {
-                  console.log('Failed...', error);
-              });
+              console.log(this.first)
+              console.log(first)
+              this.errors = [];
+                if (this.first.length === 0){
+                    console.log('here')
+                    this.errors.push("First Name Required");
+                }
+                if (!this.lastName){
+                    this.errors.push("Last Name Required");
+                }
+                if (!this.email){
+                    this.errors.push("Email Address Required");
+                }
+                if (!this.emailSubject){
+                    this.errors.push("Message Subject Required");
+                }
+                if (!this.emailBody){
+                    this.errors.push("Message Body Required");
+                }
+                console.log(this.errors)
+                if (!this.errors.length) {
+                    console.log(this.errors)
+                    // emailjs.sendForm('gmail', 'template_gT6Dck58', e.target, 'user_oy7ChoWIZUPak6TSYKogc')
+                    // .then((result) => {
+                    //     console.log('SUCCESS!', result.status, result.text);
+                    // }, (error) => {
+                    //     console.log('Failed...', error);
+                    // });
+                }
+                e.preventDefault()
           }
       }
     })

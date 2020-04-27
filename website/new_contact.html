@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" type="image/png" href="images/favicon2.png">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+        <v-navigation-drawer
+            v-model="drawer"
+            app
+            color="#00a8e1"
+            dark
+        >
+            <v-list dense>
+                <v-list-item link href="index.html">
+                    <v-list-item-action>
+                        <v-icon>mdi-home</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Home</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link href="gethelp.html">
+                    <v-list-item-action>
+                        <v-icon>fas fa-medkit</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Get Help</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item link href="https://www.covid19inwi.com/">
+                    <v-list-item-action>
+                        <v-icon>fas fa-info-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Resources</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+<!--                <v-list-item link href="faq.html">
+                    <v-list-item-action>
+                        <v-icon>far fa-question-circle</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>FAQs</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>-->
+                <v-list-item link href="contact.html">
+                    <v-list-item-action>
+                        <v-icon>far fa-envelope</v-icon>
+                    </v-list-item-action>
+                    <v-list-item-content>
+                        <v-list-item-title>Contact Us</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
+        </v-navigation-drawer>
+        <v-app-bar
+            app
+            color="#f7a800"
+            dark
+        >
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-toolbar-title>We Count COVID-19</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-btn large color="#0d2240" href="https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl">To the survey / A la encuesta</v-btn>
+        </v-app-bar>
+		<v-content>
+            <v-card
+                class="mx-auto"
+                outlined
+                color="#0d2240"
+				height="100%"
+            >
+				<v-container>
+                    <v-col>
+                        <v-card color="white" class="pa-7 mx-auto" width="600">
+                            <h2>Fill out the form below to contact us!</h2>
+                            <v-form
+                                ref="form"
+                                @submit.prevent="sendEmail"
+                                class="contact-form"
+                            >
+                                <v-text-field
+                                    v-model="firstName"
+                                    label="First Name"
+                                    name="firstName"
+                                    required
+                                ></v-text-field>
+                                <v-text-field
+                                    v-model="lastName"
+                                    label="Last Name"
+                                    name="Last Name"
+                                    required
+                                ></v-text-field>
+                                <v-text-field
+                                    v-model="email"
+                                    label="Email Address"
+                                    name="email"
+                                    required
+                                ></v-text-field>
+                                <v-text-field
+                                    v-model="emailSubject"
+                                    label="Message Subject"
+                                    name="emailSubject"
+                                    required
+                                ></v-text-field>
+                                <v-textarea
+                                    solo
+                                    v-model="emailBody"
+                                    label="Enter Your Message Here"
+                                    name="emailBody"
+                                    rows="8"
+                                ></v-textarea>
+                                <v-btn type="submit" value="submit" color="#00a8e1" dark>Submit</v-btn>
+                            </v-form>
+                        </v-card>
+                    </v-col>
+                </v-container>
+			</v-card>
+		</v-content>
+        <v-footer
+            color="#f7a800"
+			height="auto"
+            app
+        >
+			<v-row align="center" justify="center">
+			 	<v-col cols="4" class="text-center inline"><img height="32px" src="images/uwm_cropped.png"></v-col>
+				<v-col cols="4" class="text-center inline">2020</v-col>
+				<v-col cols="4" class="text-center inline"><img height="34px" src="images/blk-cfm-logo.png"></v-col>
+			</v-row>
+           
+        </v-footer>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: {
+          drawer: false,
+          errors: [],
+          firstName: null,
+          lastName: null,
+          email: null,
+          emailSubject: null,
+          emailBody: null
+      },
+      methods: {
+          sendEmail () {
+              if (this.firstName === null){
+                  console.log("got here")
+              }
+              this.errors = [];
+              console.log(this.lastName)
+              console.log(this.email)
+              console.log(this.emailSubject)
+              console.log(this.emailBody)
+              console.log(this.errors)
+              return this.firstName
+          }
+      }
+    })
+  </script>
+</body>
+</html>
