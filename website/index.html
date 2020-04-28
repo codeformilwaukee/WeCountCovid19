@@ -55,7 +55,7 @@
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title>Home</v-list-item-title>
+                        <v-list-item-title>WeCountCOVID19</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item link href="gethelp.html">
@@ -68,7 +68,7 @@
                 </v-list-item>
                 <v-list-item link href="https://www.covid19inwi.com/">
                     <v-list-item-action>
-                        <v-icon>fas fa-info-circle</v-icon>
+                        <v-icon>fas fa-external-link-alt</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
                         <v-list-item-title>Resources</v-list-item-title>
@@ -98,7 +98,6 @@
             dark
         >
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title>We Count COVID-19</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn large color="#0d2240" href="https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl">To the survey / A la encuesta</v-btn>
         </v-app-bar>
@@ -119,11 +118,19 @@
                             dark
                         >
                             <v-card-title class="headline">Welcome to We Count COVID-19</v-card-title>
-                            <v-card-text> WeCountCOVID19.com is an online survey with the goal of helping to understand people&apos;s experiences of COVID-19 symptoms and other illnesses by neighborhood and time, giving a very important picture in addition to lab testing.
-                            </v-card-text>
+                            <v-card-text>Your voice counts - we all count - if you're sick, tells us your story in this 5-minute survey</v-card-text>
                             <v-card-actions>
                                 <v-btn x-large color="#0d2240" dark href="https://milwaukee.qualtrics.com/jfe/form/SV_3F7CQTkIgR3zugl">To the survey / A la encuesta</v-btn>
                             </v-card-actions>
+                        </v-card>
+                        <br>
+                        <v-card
+                            color="#00a8e1"
+                            dark
+                        >
+                            <v-card-text>WeCountCOVID19.com is an online survey with the goal of helping to understand people&apos;s experiences of COVID-19 symptoms and other illnesses by neighborhood and time, giving a very important picture in addition to lab testing.  Here's a sneak peak
+                                at the results of our survey.  The more people who take the survey and whose voices are heard, the better information we can provide.  Please help us to connect to your communit and hearing from you.
+                            </v-card-text>
                         </v-card>
                     </v-col>
                     <v-col cols="12" md="6">
@@ -232,7 +239,7 @@
 			<v-row align="center" justify="center">
 			 	<v-col cols="4" class="text-center inline"><img height="32px" src="images/uwm_cropped.png"></v-col>
 				<v-col cols="4" class="text-center inline">2020</v-col>
-				<v-col cols="4" class="text-center inline"><img height="34px" src="images/blk-cfm-logo.png"></v-col>
+                <v-col cols="4" class="text-center inline"><img height="34px" src="images/blk-cfm-logo.png"></v-col>
 			</v-row>
            
         </v-footer>
